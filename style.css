@@ -2,12 +2,10 @@
 body, html {
     margin: 0; padding: 0;
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    /* جعلنا الخلفية شفافة للسماح برؤية الـ Overlay */
     background-color: transparent; 
     color: #ffffff;
 }
 
-/* تعديل الخلفية لتكون ظاهرة ومعزولة بـ Blur */
 .bg-overlay {
     position: fixed; 
     top: 0; 
@@ -16,14 +14,11 @@ body, html {
     height: 100%;
     background: url('141355.jpg') no-repeat center center fixed;
     background-size: cover;
-    /* رفعنا الـ opacity عشان تبان (0.6 مناسبة جداً) */
     opacity: 0.6; 
-    /* تأثير العزل الفني */
     filter: blur(4px); 
     z-index: -2;
 }
 
-/* طبقة تعتيم اختيارية لضمان وضوح الكلام الأبيض */
 body::before {
     content: "";
     position: fixed;
@@ -40,12 +35,11 @@ header { text-align: center; padding: 80px 20px; }
     letter-spacing: 6px; 
     text-transform: uppercase; 
     color: #fff;
-    /* ظل خلف النص لضمان ظهوره فوق الخلفية المعزولة */
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8); 
 }
 
 .tagline { 
-    color: #fff; /* خليناها أبيض عشان تبان */
+    color: #fff; 
     font-style: italic; 
     margin-top: 10px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
@@ -55,7 +49,7 @@ header { text-align: center; padding: 80px 20px; }
     max-width: 1200px; 
     margin: 0 auto; 
     padding: 0 20px 80px; 
-    background: transparent; /* لضمان رؤية الخلفية */
+    background: transparent; 
 }
 
 .gallery {
@@ -68,7 +62,6 @@ header { text-align: center; padding: 80px 20px; }
     position: relative; 
     border-radius: 12px; 
     overflow: hidden;
-    /* خلفية الكارت زجاجية شفافة */
     background: rgba(255, 255, 255, 0.05); 
     backdrop-filter: blur(2px);
     cursor: pointer;
@@ -94,11 +87,11 @@ header { text-align: center; padding: 80px 20px; }
     font-size: 0.9rem; 
     opacity: 0; 
     transition: 0.3s;
-    color: #fff; /* النص أبيض صريح */
+    color: #fff;
 }
 .art-card:hover .info-overlay { opacity: 1; }
 
-/* Modal Styles - نافذة التفاصيل */
+/* Modal Styles */
 .modal {
     display: none; 
     position: fixed; 
@@ -124,7 +117,7 @@ header { text-align: center; padding: 80px 20px; }
 
 .details { padding: 40px; width: 50%; direction: ltr; text-align: left; }
 .details h2 { font-size: 1.8rem; margin-bottom: 15px; color: #fff; }
-.details p { line-height: 1.6; color: #fff; } /* لون النص أبيض */
+.details p { line-height: 1.6; color: #fff; }
 .details hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
 
 .close {
@@ -132,8 +125,37 @@ header { text-align: center; padding: 80px 20px; }
     font-size: 35px; cursor: pointer;
 }
 
+/* الألوان والتفاصيل النصية الإضافية */
+#artDetails {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#colorPalette {
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* --- ضبط احترافي للموبايل --- */
 @media (max-width: 768px) {
-    .modal-content { flex-direction: column; width: 90%; }
-    #modalImg, .details { width: 100%; }
-    .logo { font-size: 2.5rem; }
+    header { padding: 40px 10px; }
+    .logo { font-size: 2.2rem; letter-spacing: 3px; }
+    .gallery { 
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
+    .art-card { aspect-ratio: auto; }
+    .modal-content {
+        flex-direction: column;
+        width: 95%;
+        margin: 5% auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    #modalImg { width: 100%; max-height: 45vh; }
+    .details { width: 100%; padding: 20px; text-align: center; }
+    .close { top: 10px; right: 15px; font-size: 40px; }
 }
