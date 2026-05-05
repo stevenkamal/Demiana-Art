@@ -6,6 +6,7 @@ body, html {
     color: #ffffff;
 }
 
+/* تعديل الخلفية لتكون ظاهرة ومعزولة بـ Blur */
 .bg-overlay {
     position: fixed; 
     top: 0; 
@@ -19,6 +20,7 @@ body, html {
     z-index: -2;
 }
 
+/* طبقة تعتيم لضمان وضوح الكلام */
 body::before {
     content: "";
     position: fixed;
@@ -125,32 +127,22 @@ header { text-align: center; padding: 80px 20px; }
     font-size: 35px; cursor: pointer;
 }
 
-/* الألوان والتفاصيل النصية الإضافية */
-#artDetails {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #ffffff;
-}
+/* تفاصيل اللوحة الإضافية */
+#artDetails { margin-top: 15px; font-weight: bold; color: #ffffff; }
+#colorPalette { margin-top: 10px; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #aaa; }
 
-#colorPalette {
-    margin-top: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.85rem;
-    color: #aaa;
-}
-
-/* --- ضبط احترافي للموبايل (صورتين بجانب بعض) --- */
+/* --- ضبط احترافي للموبايل (عرض صورتين بجانب بعض) --- */
 @media (max-width: 768px) {
     header { padding: 40px 10px; }
     .logo { font-size: 2.2rem; letter-spacing: 3px; }
     
     .gallery { 
-        /* هذا السطر يجعل الصور تظهر كعمودين بجانب بعضهما في الموبايل */
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; /* تقليل المسافة بين الصور لتناسب العرض الصغير */
+        grid-template-columns: repeat(2, 1fr) !important; /* فرض عمودين */
+        gap: 10px !important;
+        padding: 5px;
     }
     
-    .art-card { aspect-ratio: 3/4; } /* الحفاظ على نسبة الطول للعرض */
+    .art-card { aspect-ratio: 3/4; }
 
     .modal-content {
         flex-direction: column;
