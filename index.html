@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demiana's Art | Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <header>
+        <div class="logo">Demiana's Gallery</div>
+        <p class="tagline">Till Death We Do Art</p>
+    </header>
+
+    <main class="container">
+        <div class="gallery">
+            
+            <!-- 1. Be Yourself (Cat) -->
+            <div class="art-card" onclick="openModal('cat.jpg', 'Be Yourself', 'An original Cubist work using sharp angles and high-contrast colors to represent multi-layered identity and the courage to stand out.', 'Demiana Ragaey')">
+                <img src="cat.jpg" alt="Be Yourself">
+                <div class="info-overlay">View Details</div>
+            </div>
+
+            <!-- 2. The Old Guitarist -->
+            <div class="art-card" onclick="openModal('guitarist.jpg', 'The Old Guitarist', 'A technical study of Picassos Blue Period. Dominated by cold blue tones, it captures a sense of profound melancholy, poverty, and isolation.', 'Demiana Ragaey (Copy: Picasso)')">
+                <img src="guitarist.jpg" alt="The Old Guitarist">
+                <div class="info-overlay">View Details</div>
+            </div>
+
+            <!-- 3. Starry Night -->
+            <div class="art-card" onclick="openModal('starry_night.jpg', 'The Starry Night', 'A study of Van Goghs Impressionist style. The swirling brushstrokes and glowing yellows contrast with the night blue to express cosmic energy.', 'Demiana Ragaey (Copy: Van Gogh)')">
+                <img src="starry_night.jpg" alt="Starry Night">
+                <div class="info-overlay">View Details</div>
+            </div>
+
+            <!-- 4. Blossoms -->
+            <div class="art-card" onclick="openModal('almond.jpg', 'Blossom', 'A piece filled with serenity, using a clear sky-blue background and delicate white blossoms to symbolize hope, new beginnings, and growth.', 'Demiana Ragaey (Copy: Van Gogh)')">
+                <img src="almond.jpg" alt="Blossom">
+                <div class="info-overlay">View Details</div>
+            </div>
+
+            <!-- 5. Character Portrait -->
+            <div class="art-card" onclick="openModal('clown.jpg', 'Character Portrait', 'A cartoonish portrait with a surreal touch. The contrast between warm colors and wide expressive eyes creates a balance between joy and mystery.', 'Demiana Ragaey')">
+                <img src="clown.jpg" alt="Character Portrait">
+                <div class="info-overlay">View Details</div>
+            </div>
+
+            <!-- 6. Merging Personalities -->
+            <div class="art-card" onclick="openModal('couple.jpg', 'Merging Personalities', 'A contemporary work merging faces in an abstract style, representing deep emotional overlap and the spiritual connection between characters.', 'Demiana Ragaey')">
+                <img src="couple.jpg" alt="Merging Personalities">
+                <div class="info-overlay">View Details</div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal for Details -->
+    <div id="artModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="">
+            <div class="details">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDesc"></p>
+                <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+                <p><strong>Artist:</strong> <span id="modalArtist"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Demiana's Art - All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
