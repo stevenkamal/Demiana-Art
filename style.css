@@ -139,15 +139,19 @@ header { text-align: center; padding: 80px 20px; }
     color: #aaa;
 }
 
-/* --- ضبط احترافي للموبايل --- */
+/* --- ضبط احترافي للموبايل (صورتين بجانب بعض) --- */
 @media (max-width: 768px) {
     header { padding: 40px 10px; }
     .logo { font-size: 2.2rem; letter-spacing: 3px; }
+    
     .gallery { 
-        grid-template-columns: 1fr; 
-        gap: 15px; 
+        /* هذا السطر يجعل الصور تظهر كعمودين بجانب بعضهما في الموبايل */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; /* تقليل المسافة بين الصور لتناسب العرض الصغير */
     }
-    .art-card { aspect-ratio: auto; }
+    
+    .art-card { aspect-ratio: 3/4; } /* الحفاظ على نسبة الطول للعرض */
+
     .modal-content {
         flex-direction: column;
         width: 95%;
@@ -155,6 +159,7 @@ header { text-align: center; padding: 80px 20px; }
         max-height: 90vh;
         overflow-y: auto;
     }
+    
     #modalImg { width: 100%; max-height: 45vh; }
     .details { width: 100%; padding: 20px; text-align: center; }
     .close { top: 10px; right: 15px; font-size: 40px; }
